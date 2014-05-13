@@ -10,6 +10,7 @@ Vagrant.configure('2') do |config|
   config.ssh.port = 3022
 
   config.vm.network :forwarded_port, guest: 3000, host: 3000
+  config.vm.network :forwarded_port, guest: 3000, host: 80
 
   config.vm.provider :virtualbox do |virtualbox|
     virtualbox.customize ["modifyvm", :id, "--name", "askaway"]
